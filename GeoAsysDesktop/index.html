@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEOASYS - Sistema Experto Geométrico</title>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <h2>GEOASYS</h2>
+      <p class="subtitle">Asistente Experto Geométrico</p>
+
+      <form id="inferenceForm">
+        <div class="form-group">
+          <label for="dimension">Dimensión:</label>
+          <select id="dimension" name="dimension">
+            <option value="2">2D (Figura Plana)</option>
+            <option value="3" selected>3D (Cuerpo Volumétrico)</option>
+          </select>
+        </div>
+
+        <div class="form-group group-2d hidden">
+          <label for="numeroLados">Número de Lados:</label>
+          <input type="number" id="numeroLados" min="0" placeholder="Ej. 3, 4, 6" />
+        </div>
+
+        <div class="form-group group-3d">
+          <label for="numeroCaras">Número de Caras:</label>
+          <input type="number" id="numeroCaras" min="0" placeholder="Ej. 4, 6, 8, 12, 20" />
+        </div>
+
+        <div class="form-group">
+          <label for="numeroVertices">Número de Vértices:</label>
+          <input type="number" id="numeroVertices" min="0" placeholder="Ej. 4, 6, 8, 12, 20" />
+        </div>
+
+        <div class="form-group group-3d">
+          <label for="numeroAristas">Número de Aristas:</label>
+          <input type="number" id="numeroAristas" min="0" placeholder="Ej. 6, 12, 30" />
+        </div>
+
+        <button type="submit" id="btnConsultar">Inferir Figura</button>
+      </form>
+    </aside>
+    <main class="content">
+      <div class="viewport-card">
+        <div class="card-header">Visualización de la Figura</div>
+        <div id="renderCanvasContainer"></div>
+      </div>
+
+      <div class="results-card">
+        <div class="card-header">Resultados de la Inferencia</div>
+        <div id="resultsList" class="results-list">
+          <p class="placeholder">Ingresa los parámetros y presiona "Inferir Figura" para obtener coincidencias.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>

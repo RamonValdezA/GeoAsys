@@ -1,0 +1,11 @@
+# Archivos y carpetas de configuración e IDE
+.vs/
+.vscode/
+
+# Carpetas de salida de compilación
+bin/
+obj/
+
+# Archivos de paquetes y temporales
+*.user
+*.suo
